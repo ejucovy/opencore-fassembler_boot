@@ -1,0 +1,3 @@
+# a requirements file for pip install -r {me}
+
+opencore-fassembler_projects

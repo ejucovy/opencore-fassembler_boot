@@ -1,0 +1,16 @@
+0.3.1
+-----
+
+Passing profile_url as a positional arg was broken.  It works now.
+
+0.3
+---
+
+New package opencore-fassembler_boot, based on OpenplansBoot.
+
+Redesigned to use configuration files managed per-site, and to make the newbuild.sh script non-public.
+
+0.2
+---
+
+- Remove --use-plone3 as an option; obsoleted by default-build.ini
