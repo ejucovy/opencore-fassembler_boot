@@ -129,11 +129,6 @@ def main():
     outfile = open(os.path.join(install_dir, 'opencore.conf'), 'w')
     outfile.write(conf)
     outfile.close()
-
-    # for now, just copy over extras.txt 
-    shutil.copy(resource_filename('fassembler_boot', 
-                                  'extra-fassembler-projects.txt'),
-                install_dir)
     
     print "\nSuccess; site layout set up in %(dir)s\n" \
         "Run `rebuild-opencore -b %(dir)s` to continue" % subs
