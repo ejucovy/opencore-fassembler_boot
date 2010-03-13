@@ -23,17 +23,14 @@ setting in your configuration file (%s)""" % config_path)
     site_fqdn = config['site_fqdn']
     base_port = config['base_port']
 
-    fassembler_extras = config.get('fassembler_projects')
-    if fassembler_extras and not os.path.isabs(fassembler_extras):
-        fassembler_extras = os.path.join(base_dir, fassembler_extras)
-
+    cmd = [script,
+           profile_url, base_dir, etc_svn_repo, 
+           site_fqdn, base_port]
     print "using profile url: %s" % profile_url
-
+    print cmd
+    
     os.chmod(script, 0755)
-    subprocess.call([script,
-                     profile_url, base_dir, etc_svn_repo, 
-                     site_fqdn, base_port,
-                     fassembler_extras])
+    subprocess.call(cmd)
 
 import sys
 

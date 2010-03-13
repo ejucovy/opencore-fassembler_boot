@@ -1,3 +1,10 @@
+0.4
+---
+
+Removed fassembler_projects parameter. Instead, the bootstrap script now looks for
+a file "fassembler-req.txt" in the profile directory to be built, since profiles
+should manage their own requirements.
+
 0.3.2
 -----
 

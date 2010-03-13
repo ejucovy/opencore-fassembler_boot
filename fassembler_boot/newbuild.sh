@@ -3,13 +3,13 @@
 # THIS SCRIPT DOES NOT TAKE CARE OF STOPPING OR CHECKING SERVICES!!!
 
 # arguments:
-# ./newbuild.sh profile_url basedir etc_svn_repo site_name base_port [fassembler_extras]
+# ./newbuild.sh profile_url basedir etc_svn_repo site_name base_port
 
 BASEDIR="$2"
 
 ETC_SVN_REPO="$3"
 
-FASSEMBLER_EXTRAS="$6"
+FASSEMBLER_EXTRAS_FILE="fassembler-req.txt"
 
 INSTANCE="$4"
 
@@ -69,10 +69,11 @@ done
 ./fassembler-boot.py ${DIR}
 cd $DIR
 
-fassembler/bin/easy_install -U pip
-if [ $FASSEMBLER_EXTRAS ]; then
-    echo fassembler/bin/pip install -r $FASSEMBLER_EXTRAS
-    fassembler/bin/pip install -r $FASSEMBLER_EXTRAS
+FASSEMBLER_EXTRAS="$REQ_DIR/$FASSEMBLER_EXTRAS_FILE"
+svn export $FASSEMBLER_EXTRAS
+if [ $? == 0 ]; then
+    echo fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE
+    fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE
 fi
 
 echo bin/fassembler base_port="$BASE_PORT" var="$BASEDIR/var" db_prefix=${DB_PREFIX} etc_svn_subdir=${INSTANCE} etc_svn_repo=${ETC_SVN_REPO} requirements_svn_repo="$REQ_SVN" fassembler:topp
