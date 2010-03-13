@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-version = '0.3.1'
+version = '0.3.2'
 
 setup(name='opencore-fassembler_boot',
       version=version,
@@ -22,7 +22,8 @@ setup(name='opencore-fassembler_boot',
       entry_points="""
       [console_scripts]
       new-opencore-site = fassembler_boot.newsite:main
-      rebuild-opencore = fassembler_boot.newbuild:main
+      new-opencore-site-config = fassembler_boot.newsite:config
+      rebuild-opencore-site = fassembler_boot.newbuild:main
       """,
       )
       

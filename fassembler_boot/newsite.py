@@ -138,5 +138,11 @@ def main():
     print "\nSuccess; site layout set up in %(dir)s\n" \
         "Run `rebuild-opencore -b %(dir)s` to continue" % subs
 
+def config():
+    conf_template = resource_filename('fassembler_boot', 'opencore.conf')
+    fp = open(conf_template)
+    print fp.read()
+    fp.close()
+
 if __name__ == '__main__':
     main()
