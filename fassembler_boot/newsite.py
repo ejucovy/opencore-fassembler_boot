@@ -131,7 +131,7 @@ def main():
     outfile.close()
     
     print "\nSuccess; site layout set up in %(dir)s\n" \
-        "Run `rebuild-opencore -b %(dir)s` to continue" % subs
+        "Run `rebuild-opencore-site -b %(dir)s` to continue" % subs
 
 def config():
     conf_template = resource_filename('fassembler_boot', 'opencore.conf')
