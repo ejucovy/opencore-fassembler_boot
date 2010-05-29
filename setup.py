@@ -2,10 +2,20 @@ from setuptools import setup, find_packages
 
 version = '0.4.1'
 
+description = """
+%s
+
+Changelog
+=========
+
+%s
+""" % (open('README.txt').read(),
+       open('doc/CHANGES.txt').read())
+
 setup(name='opencore-fassembler_boot',
       version=version,
       description="Creates a setup for new OpenCore site deployments that use Fassembler",
-      long_description=open('README.txt').read(),
+      long_description=description,
       classifiers=[],
       keywords='',
       author='opencore-dev',
