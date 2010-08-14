@@ -23,9 +23,16 @@ setting in your configuration file (%s)""" % config_path)
     site_fqdn = config['site_fqdn']
     base_port = config['base_port']
 
+    extra_zopes = config.get("num_extra_zopes", "0")
+    try:
+        int(extra_zopes)
+    except ValueError:
+        raise ValueError(
+            "If supplied, num_extra_zopes must be an integer")
+
     cmd = [script,
            profile_url, base_dir, etc_svn_repo, 
-           site_fqdn, base_port]
+           site_fqdn, base_port, extra_zopes]
     print "using profile url: %s" % profile_url
     print cmd
     
