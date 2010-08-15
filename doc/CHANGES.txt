@@ -4,7 +4,8 @@
 Add an optional parameter num_extra_zopes which, if set, will
 cause N extra zope instances to be installed at the end of the build.
 
-Requires fassembler>=0.4 which added the ``extrazope`` project, and
+Requires fassembler>=0.5 (0.4 which added the ``extrazope`` project,
+and 0.5 which added the ``num_extra_zopes`` setting) and
 libopencore>=0.4 which allows load-balanced proxying to a set of zope
 servers.
 
