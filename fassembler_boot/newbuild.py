@@ -20,6 +20,10 @@ an argument to new-opencore-build, or with a `default_build_profile`
 setting in your configuration file (%s)""" % config_path)
 
     etc_svn_repo = config['etc_svn_repo']
+
+    if '://' not in etc_svn_repo:
+        etc_svn_repo = 'file://' + etc_svn_repo
+
     site_fqdn = config['site_fqdn']
     base_port = config['base_port']
 

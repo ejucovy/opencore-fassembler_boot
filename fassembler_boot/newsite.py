@@ -97,6 +97,9 @@ def main():
                             "untrusted users.:\n"))
         etc_svn_repo = raw_input(prompt).strip()
 
+    if '://' not in etc_svn_repo:
+        etc_svn_repo = 'file://' + etc_svn_repo
+
     if not assert_svn_repo_exists(etc_svn_repo):
         sys.stderr.write("Warning: couldn't verify subversion at %r!\n"
                          % etc_svn_repo)

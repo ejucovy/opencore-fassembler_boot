@@ -1,3 +1,8 @@
+0.6
+---
+
+Prepend file:// to etc_svn_repo if no protocol is specified.
+
 0.5
 ---
 
