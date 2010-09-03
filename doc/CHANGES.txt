@@ -3,6 +3,13 @@
 
 Prepend file:// to etc_svn_repo if no protocol is specified.
 
+Fix bug in newbuild.sh script, where it looks for "fassembler-req.txt",
+which was failing when using a relative requirements profile
+directory rather than an absolute path.
+
+Check that a ``builds`` directory exists under ``base_dir`` before
+running newbuild.sh
+
 0.5
 ---
 

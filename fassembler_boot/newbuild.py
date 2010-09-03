@@ -9,6 +9,9 @@ def start_build(base_dir, config_path=None, profile_url=None):
         config_path = os.path.join(base_dir, 'opencore.conf')
     assert os.path.exists(config_path), \
         "No configuration file found at %s" % config_path
+    if not os.path.exists(os.path.join(base_dir, 'builds')):
+        os.mkdir(os.path.join(base_dir, 'builds'))
+    assert os.path.isdir(os.path.join(base_dir, 'builds'))
 
     config = get_config(config_path)
 

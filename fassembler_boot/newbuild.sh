@@ -71,7 +71,7 @@ done
 ./fassembler-boot.py ${DIR}
 cd $DIR
 
-FASSEMBLER_EXTRAS="$REQ_DIR/$FASSEMBLER_EXTRAS_FILE"
+FASSEMBLER_EXTRAS="$REQ_SVN/$FASSEMBLER_EXTRAS_FILE"
 svn export $FASSEMBLER_EXTRAS
 if [ $? == 0 ]; then
     echo fassembler/bin/pip install -r $FASSEMBLER_EXTRAS_FILE
