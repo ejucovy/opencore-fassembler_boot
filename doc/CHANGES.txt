@@ -1,3 +1,11 @@
+0.7
+---
+
+The ``profile_url`` and ``default_profile_url`` can now be specified
+as svn://, svn+ssh://, and file:// URLs also.  Previously the only
+options were http://, https:// and relative paths (which are treated
+as suffixes against https://svn.openplans.org/svn/build/requirements)
+
 0.6
 ---
 

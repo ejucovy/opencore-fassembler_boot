@@ -31,14 +31,14 @@ shift
 
 if [ -z "$REQ_DIR" ] ; then
     echo "Usage: $(basename $0) REQ_DIR [fassembler options]"
-    echo "REQ_DIR is a http(s) URL, or a directory at least two levels below $REQ_BASE"
+    echo "REQ_DIR is a fully-specific SVN URL (http(s)://, file://, svn://, or svn+ssh://), or a directory at least two levels below $REQ_BASE"
     echo "Available:"
     svn cat https://svn.openplans.org/svn/scripts/build/list_req_dirs.py | python
     exit 2
 fi
 
 REQ_SVN=$REQ_DIR
-if [[ $REQ_DIR != http://* && $REQ_DIR != https://* ]]; then
+if [[ $REQ_DIR != http://* && $REQ_DIR != https://* && $REQ_DIR != file://* && $REQ_DIR != svn://* && $REQ_DIR != svn+ssh://* ]]; then
   REQ_SVN="$REQ_BASE/$REQ_DIR"
 fi
 
